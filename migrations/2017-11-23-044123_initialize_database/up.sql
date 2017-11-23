@@ -1,10 +1,10 @@
 create table TestTable (
-  TestId integer autoincrement,
-  Value text
+  TestId integer primary key autoincrement,
+  Value text not null
 );
 
 create table TestRating (
-  TestId integer,
+  TestId integer PRIMARY KEY,
   Rating integer,
   foreign key(TestId) references TestTable(TestId)
 );
