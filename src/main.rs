@@ -11,6 +11,7 @@ extern crate rocket;
 
 pub mod schema;
 pub mod models;
+pub mod emissary;
 
 extern crate dotenv;
 
@@ -21,6 +22,7 @@ use diesel::sqlite::SqliteConnection;
 use dotenv::dotenv;
 use std::env;
 
+use emissary::*;
 extern crate serde;
 
 use rocket_contrib::{json, Json, Value};
