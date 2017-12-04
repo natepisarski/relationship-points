@@ -21,6 +21,7 @@ use diesel::prelude::*;
 use diesel::sqlite::SqliteConnection;
 use dotenv::dotenv;
 use std::env;
+use std::time::{SystemTime};
 
 use emissary::*;
 extern crate serde;
@@ -35,8 +36,15 @@ pub fn establish_connection() -> SqliteConnection {
     SqliteConnection::establish(&database_url)
         .expect("ERROR CONNECTING TO DATABASE")
 }
+
+#[derive(Serialize, Deserialize)]
+pub struct TestValueAndDate {
+    pub test_value: String,
+    pub time: SystemTime
+}
+
 #[get("/")]
-fn index() -> Json<Value> {
+fn index() -> String {
     use schema::*;
     use schema::TestTable::dsl::*;
     dotenv().ok();
@@ -46,7 +54,20 @@ fn index() -> Json<Value> {
     let results = TestTable.limit(5)
         .load::<self::models::TestValue>(&connection)
         .expect("Error loading tests");
-    return Json(json!({"value": results.len()}))
+    let mut final_result: String = "".to_owned();
+    for db_test_value in results {
+        let value_as_emissary: EmissaryContainer<TestValueAndDate> =
+            create_emissary("entities.test.values".to_owned(),
+                            TestValueAndDate {
+                                test_value: db_test_value.value,
+                                time: SystemTime::now(),
+                            }
+            );
+        final_result =  serialize_emissary(
+            value_as_emissary
+        );
+    }
+    return final_result;
 }
 
 fn main() {

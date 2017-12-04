@@ -19,7 +19,7 @@ pub trait Emissary {
     fn serialization_key(&self, Self::DataType) -> String;
 }
 
-#[serde_derive(Serialize, Debug)]
+#[derive(Serialize, Debug)]
 pub struct EmissaryContainer<T: serde::Serialize> {
     pub data: T,
     pub key: String
@@ -36,5 +36,12 @@ pub fn serialize_emissary<T: Emissary + serde::Serialize>(emissary: T) -> String
     match serde_json::to_string(&emissary) {
         Ok(val) => val,
         Err(err) => String::new()
+    }
+}
+
+pub fn create_emissary<T: serde::Serialize>(emissary_key: String, inner_data: T) -> EmissaryContainer<T> {
+    EmissaryContainer {
+        data: inner_data,
+        key: emissary_key.clone()
     }
 }
