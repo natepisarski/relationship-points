@@ -7,11 +7,13 @@ extern crate rocket;
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate diesel;
 
-#[macro_use] extern crate diesel_codegen;
+#[macro_use] extern crate diesel_infer_schema;
 
 pub mod schema;
 pub mod models;
 pub mod emissary;
+pub mod citadel;
+pub mod test_value_inserter;
 
 extern crate dotenv;
 
@@ -24,6 +26,7 @@ use std::env;
 use std::time::{SystemTime};
 
 use emissary::*;
+use citadel::*;
 extern crate serde;
 
 use rocket_contrib::{json, Json, Value};
@@ -56,14 +59,14 @@ fn index() -> String {
         .expect("Error loading tests");
     let mut final_result: String = "".to_owned();
     for db_test_value in results {
-        let value_as_emissary: EmissaryContainer<TestValueAndDate> =
-            create_emissary("entities.test.values".to_owned(),
+        let value_as_emissary: emissary::emissary::EmissaryContainer<TestValueAndDate> =
+            emissary::emissary::create_emissary("entities.test.values".to_owned(),
                             TestValueAndDate {
                                 test_value: db_test_value.value,
                                 time: SystemTime::now(),
                             }
             );
-        final_result =  serialize_emissary(
+        final_result =  emissary::emissary::serialize_emissary(
             value_as_emissary
         );
     }
