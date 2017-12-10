@@ -3,5 +3,5 @@
 use citadel::system::DatabaseConnection;
 
 pub trait Creator<T: DatabaseConnection, W> {
-    fn insert(&self, connection: T, insertion_object: W) -> bool;
+    fn insert(&self, connection: &T, insertion_object: W) -> bool;
 }

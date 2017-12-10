@@ -1,7 +1,15 @@
 #![feature(plugin, custom_attribute, custom_derive)]
 #![plugin(rocket_codegen)]
 
+pub mod schema;
+pub mod models;
+pub mod emissary;
+pub mod citadel;
+pub mod test_value_inserter;
+
 extern crate rocket;
+extern crate serde;
+extern crate dotenv;
 
 #[macro_use] extern crate rocket_contrib;
 #[macro_use] extern crate serde_derive;
@@ -9,34 +17,28 @@ extern crate rocket;
 
 #[macro_use] extern crate diesel_infer_schema;
 
-pub mod schema;
-pub mod models;
-pub mod emissary;
-pub mod citadel;
-pub mod test_value_inserter;
-
-extern crate dotenv;
+use citadel::*;
+use citadel::creator::Creator;
+use citadel::system::DatabaseConnection;
+use citadel::connections::sqlite_connection;
 
 use diesel::prelude::*;
 
-use diesel::prelude::*;
-use diesel::sqlite::SqliteConnection;
 use dotenv::dotenv;
-use std::env;
-use std::time::{SystemTime};
+use test_value_inserter::*;
 
 use emissary::*;
-use citadel::*;
-extern crate serde;
 
 use rocket_contrib::{json, Json, Value};
 
+use std::env;
+use std::time::{SystemTime};
 
-pub fn establish_connection() -> SqliteConnection {
+pub fn establish_connection() -> diesel::SqliteConnection {
     dotenv().ok();
     let database_url = env::var("DATABASE_URL")
         .expect("DATABASE URL must be set!");
-    SqliteConnection::establish(&database_url)
+    diesel::SqliteConnection::establish(&database_url)
         .expect("ERROR CONNECTING TO DATABASE")
 }
 
@@ -52,10 +54,15 @@ fn index() -> String {
     use schema::TestTable::dsl::*;
     dotenv().ok();
     let database_url = env::var("DATABASE_URL").expect("The environment variable DATABASE_URL must be set!");
-    //let connection: diesel::Connection = diesel::connection::Connection::establish(&database_url).unwrap();
-    let connection = establish_connection();
+
+    let mut connection =
+        sqlite_connection::SqliteConnection::new(&database_url);
+
+    let inserter = TestValueInserter{};
+    inserter.insert(&connection, String::from("THIS IS A BRAND SPANKIN NEW TEST VALUE"));
+
     let results = TestTable.limit(5)
-        .load::<self::models::TestValue>(&connection)
+        .load::<self::models::TestValue>(connection.raw_connection().as_ref())
         .expect("Error loading tests");
     let mut final_result: String = "".to_owned();
     for db_test_value in results {

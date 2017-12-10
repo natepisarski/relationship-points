@@ -18,7 +18,7 @@ pub struct TestValueInserter {
 
 
 impl Creator<SqliteConnection, String> for TestValueInserter {
-    fn insert(&self, connection: SqliteConnection, to_insert: String) -> bool {
+    fn insert(&self, connection: &SqliteConnection, to_insert: String) -> bool {
         let connection_copy = connection.raw_connection();
         let connection_reference: &diesel::SqliteConnection = connection_copy.as_ref();
 
