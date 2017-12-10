@@ -1,0 +1,4 @@
+/// P
+pub struct Person {
+
+}
