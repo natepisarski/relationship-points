@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e198f5c2-45a3-440a-830c-9f4074fe6636" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.rs" afterPath="$PROJECT_DIR$/src/main.rs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/relationship/person_reader.rs" afterPath="$PROJECT_DIR$/src/relationship/person_reader.rs" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,8 +71,8 @@
       <file leaf-file-name="person_reader.rs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/relationship/person_reader.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            <state relative-caret-position="348">
+              <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -194,8 +193,8 @@
         <option value="$PROJECT_DIR$/src/relationship/gender.rs" />
         <option value="$PROJECT_DIR$/src/relationship/person.rs" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a11d23ac-be4b-4ab2-8188-510bc719afb7/console.sql" />
-        <option value="$PROJECT_DIR$/src/relationship/person_reader.rs" />
         <option value="$PROJECT_DIR$/src/main.rs" />
+        <option value="$PROJECT_DIR$/src/relationship/person_reader.rs" />
       </list>
     </option>
   </component>
@@ -404,12 +403,12 @@
       <workItem from="1510280793704" duration="15000" />
       <workItem from="1510376216067" duration="6536000" />
       <workItem from="1510716636967" duration="23328000" />
-      <workItem from="1512331410268" duration="27825000" />
+      <workItem from="1512331410268" duration="28002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58105000" />
+    <option name="totallyTimeSpent" value="58282000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="12" width="1576" height="857" extended-state="0" />
@@ -797,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/relationship/person_reader.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        <state relative-caret-position="348">
+          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
           <folding />
         </state>
       </provider>

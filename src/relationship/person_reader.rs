@@ -24,6 +24,24 @@ impl Reader<sqlite_connection::SqliteConnection, Option<person::Person>> for Per
         let connection = connection.raw_connection();
         let usable_connection = connection.as_ref();
 
+        match self.criteria {
+            PersonReaderSearchCriteria::FirstName(ref name) =>
+                Some(Person
+                .filter(FirstName.eq(name))
+                .first(usable_connection)
+                .unwrap()),
+            PersonReaderSearchCriteria::LastName(ref name) =>
+                Some(Person
+                    .filter(LastName.eq(name))
+                    .first(usable_connection)
+                    .unwrap()),
+            PersonReaderSearchCriteria::EmailAddress(ref email) =>
+                Some(Person
+                    .filter(EmailAddress.eq(email))
+                    .first(usable_connection)
+                    .unwrap())
+        }
+        /*
         if let PersonReaderSearchCriteria::FirstName(ref name) = self.criteria {
             return Some(Person
                 .filter(FirstName.eq(name))
@@ -33,7 +51,7 @@ impl Reader<sqlite_connection::SqliteConnection, Option<person::Person>> for Per
             panic!("");//return Person.filter(LastName.eq(name)).limit(1).load
         } else {
             panic!("No person with the given name found!");
-        }
+        }*/
     }
 }
 
