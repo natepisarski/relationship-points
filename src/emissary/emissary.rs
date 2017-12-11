@@ -16,8 +16,6 @@
 ///
 /// Callbacks do not need to be URLs. In a CQRS model, it could feed the string which initiates a query / command.
 
-use std::collections::HashMap;
-use std::rc::Rc;
 use std::vec::Vec;
 
 extern crate serde;

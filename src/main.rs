@@ -1,10 +1,12 @@
 #![feature(plugin, custom_attribute, custom_derive)]
 #![plugin(rocket_codegen)]
+#![recursion_limit="1024"]
 
 pub mod schema;
 pub mod models;
 pub mod emissary;
 pub mod citadel;
+pub mod relationship;
 pub mod test_value_inserter;
 
 extern crate rocket;

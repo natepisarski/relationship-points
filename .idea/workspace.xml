@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e198f5c2-45a3-440a-830c-9f4074fe6636" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/relationship/mod.rs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/relationship/person.rs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/relationship/gender.rs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/relationship/person_reader.rs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.sqlite3" afterPath="$PROJECT_DIR$/test.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/a11d23ac-be4b-4ab2-8188-510bc719afb7.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/a11d23ac-be4b-4ab2-8188-510bc719afb7.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/citadel/deleter.rs" afterPath="$PROJECT_DIR$/src/citadel/deleter.rs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/citadel/reader.rs" afterPath="$PROJECT_DIR$/src/citadel/reader.rs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/citadel/updater.rs" afterPath="$PROJECT_DIR$/src/citadel/updater.rs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test_value_inserter.rs" afterPath="$PROJECT_DIR$/src/test_value_inserter.rs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/emissary/emissary.rs" afterPath="$PROJECT_DIR$/src/emissary/emissary.rs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.rs" afterPath="$PROJECT_DIR$/src/main.rs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/relationship/mod.rs" afterPath="$PROJECT_DIR$/src/relationship/mod.rs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/relationship/person.rs" afterPath="$PROJECT_DIR$/src/relationship/person.rs" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -41,6 +44,12 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="Test Database" type="e3449647:DbNodeDescriptor" />
         <item name="main" type="e3449647:DbNodeDescriptor" />
+        <item name="Person" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="Test Database" type="e3449647:DbNodeDescriptor" />
+        <item name="main" type="e3449647:DbNodeDescriptor" />
         <item name="TestTable" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
@@ -48,74 +57,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="emissary.rs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/emissary/emissary.rs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="71" column="17" lean-forward="false" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
-              <folding>
-                <element signature="e#2737#2738#0" expanded="true" />
-                <element signature="e#2762#2763#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_value_inserter.rs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test_value_inserter.rs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="24" column="75" lean-forward="false" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a11d23ac-be4b-4ab2-8188-510bc719afb7/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="creator.rs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/citadel/creator.rs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="6" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deleter.rs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/citadel/deleter.rs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="mod.rs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/relationship/mod.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="person.rs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/relationship/person.rs">
+      <file leaf-file-name="person_reader.rs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/relationship/person_reader.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+            <state relative-caret-position="150">
+              <caret line="25" column="57" lean-forward="false" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -124,18 +80,8 @@
       <file leaf-file-name="reader.rs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/citadel/reader.rs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="updater.rs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/citadel/updater.rs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="40" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,8 +90,58 @@
       <file leaf-file-name="main.rs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.rs">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="person.rs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/relationship/person.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gender.rs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/relationship/gender.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_value_inserter.rs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test_value_inserter.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="75" lean-forward="false" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="emissary.rs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/emissary/emissary.rs">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schema.rs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/schema.rs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="37" lean-forward="true" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -180,20 +176,24 @@
         <option value="$PROJECT_DIR$/src/emissary/mod.rs" />
         <option value="$PROJECT_DIR$/src/emissary/callback.rs" />
         <option value="$PROJECT_DIR$/src/citadel/connections/mod.rs" />
-        <option value="$PROJECT_DIR$/src/emissary/emissary.rs" />
         <option value="$PROJECT_DIR$/src/citadel/citadel_action.rs" />
         <option value="$PROJECT_DIR$/src/citadel/mod.rs" />
         <option value="$PROJECT_DIR$/Cargo.toml" />
         <option value="$PROJECT_DIR$/src/citadel/system.rs" />
         <option value="$PROJECT_DIR$/src/citadel/connections/sqlite_connection.rs" />
         <option value="$PROJECT_DIR$/src/citadel/creator.rs" />
-        <option value="$PROJECT_DIR$/src/main.rs" />
         <option value="$PROJECT_DIR$/src/test_value_inserter.rs" />
         <option value="$PROJECT_DIR$/src/citadel/updater.rs" />
-        <option value="$PROJECT_DIR$/src/citadel/reader.rs" />
         <option value="$PROJECT_DIR$/src/citadel/deleter.rs" />
         <option value="$PROJECT_DIR$/src/relationship/mod.rs" />
+        <option value="$PROJECT_DIR$/src/citadel/reader.rs" />
+        <option value="$PROJECT_DIR$/migrations/2017-12-11-005525_create_person/up.sql" />
+        <option value="$PROJECT_DIR$/migrations/2017-12-11-005525_create_person/down.sql" />
+        <option value="$PROJECT_DIR$/src/main.rs" />
+        <option value="$PROJECT_DIR$/src/emissary/emissary.rs" />
+        <option value="$PROJECT_DIR$/src/relationship/gender.rs" />
         <option value="$PROJECT_DIR$/src/relationship/person.rs" />
+        <option value="$PROJECT_DIR$/src/relationship/person_reader.rs" />
       </list>
     </option>
   </component>
@@ -242,12 +242,18 @@
               <item name="relationship-points" type="b2602c69:ProjectViewProjectNode" />
               <item name="relationship-points" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
-              <item name="2017-11-23-044123_initialize_database" type="462c0819:PsiDirectoryNode" />
+              <item name="2017-12-11-005525_create_person" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="relationship-points" type="b2602c69:ProjectViewProjectNode" />
               <item name="relationship-points" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="relationship-points" type="b2602c69:ProjectViewProjectNode" />
+              <item name="relationship-points" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="citadel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="relationship-points" type="b2602c69:ProjectViewProjectNode" />
@@ -396,12 +402,12 @@
       <workItem from="1510280793704" duration="15000" />
       <workItem from="1510376216067" duration="6536000" />
       <workItem from="1510716636967" duration="23328000" />
-      <workItem from="1512331410268" duration="21206000" />
+      <workItem from="1512331410268" duration="25871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51486000" />
+    <option name="totallyTimeSpent" value="56151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="12" width="1576" height="857" extended-state="0" />
@@ -493,8 +499,8 @@
         <state relative-caret-position="493">
           <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
-            <element signature="e#2737#2738#0" expanded="true" />
-            <element signature="e#2762#2763#0" expanded="true" />
+            <element signature="e#2689#2690#0" expanded="true" />
+            <element signature="e#2714#2715#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -659,14 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/schema.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/citadel/system.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -683,37 +681,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a11d23ac-be4b-4ab2-8188-510bc719afb7/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="25" lean-forward="false" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/emissary/emissary.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="71" column="17" lean-forward="false" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
-          <folding>
-            <element signature="e#2737#2738#0" expanded="true" />
-            <element signature="e#2762#2763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test_value_inserter.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="24" column="75" lean-forward="false" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
           <folding />
         </state>
       </provider>
@@ -734,14 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/citadel/reader.rs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="40" lean-forward="false" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/citadel/deleter.rs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -752,6 +715,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/relationship/mod.rs">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/citadel/reader.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/2017-12-11-005525_create_person/down.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/schema.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="true" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test_value_inserter.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="75" lean-forward="false" selection-start-line="24" selection-start-column="75" selection-end-line="24" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/2017-12-11-005525_create_person/up.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/emissary/emissary.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/relationship/gender.rs">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
@@ -760,8 +787,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/relationship/person.rs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/relationship/person_reader.rs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="25" column="57" lean-forward="false" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
           <folding />
         </state>
       </provider>
