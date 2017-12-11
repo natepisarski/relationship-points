@@ -22,6 +22,7 @@ extern crate dotenv;
 use citadel::*;
 use citadel::creator::Creator;
 use citadel::system::DatabaseConnection;
+use citadel::reader::Reader;
 use citadel::connections::sqlite_connection;
 
 use diesel::prelude::*;
@@ -30,6 +31,9 @@ use dotenv::dotenv;
 use test_value_inserter::*;
 
 use emissary::*;
+
+use relationship::person::Person;
+use relationship::person_reader::{PersonReaderSearchCriteria, PersonReader};
 
 use rocket_contrib::{json, Json, Value};
 
@@ -62,6 +66,11 @@ fn index() -> String {
 
     let inserter = TestValueInserter{};
     inserter.insert(&connection, String::from("THIS IS A BRAND SPANKIN NEW TEST VALUE"));
+
+    let guy_named_john = (PersonReader {
+        criteria: PersonReaderSearchCriteria::FirstName(String::from("John"))
+    }).read(&connection);
+    println!("Johns email is {}", guy_named_john.email_address);
 
     let results = TestTable.limit(5)
         .load::<self::models::TestValue>(connection.raw_connection().as_ref())
