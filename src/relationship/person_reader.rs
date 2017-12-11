@@ -5,8 +5,6 @@ use citadel::connections::sqlite_connection;
 use diesel::*;
 use relationship::person;
 
-use super::super::schema::Person;
-
 pub enum PersonReaderSearchCriteria {
     FirstName(String),
     LastName(String),
@@ -17,8 +15,8 @@ pub struct PersonReader {
     pub criteria: PersonReaderSearchCriteria
 }
 
-impl Reader<sqlite_connection::SqliteConnection, Option<person::Person>> for PersonReader {
-    fn read(&self, connection: &sqlite_connection::SqliteConnection) -> Option<person::Person> {
+impl Reader<sqlite_connection::SqliteConnection, Option<person::PersonModel>> for PersonReader {
+    fn read(&self, connection: &sqlite_connection::SqliteConnection) -> Option<person::PersonModel> {
         use super::super::schema::Person::dsl::*;
 
         let connection = connection.raw_connection();
@@ -41,17 +39,6 @@ impl Reader<sqlite_connection::SqliteConnection, Option<person::Person>> for Per
                     .first(usable_connection)
                     .unwrap())
         }
-        /*
-        if let PersonReaderSearchCriteria::FirstName(ref name) = self.criteria {
-            return Some(Person
-                .filter(FirstName.eq(name))
-                .first(usable_connection)
-                .unwrap());
-        } else if let PersonReaderSearchCriteria::LastName(ref name) = self.criteria {
-            panic!("");//return Person.filter(LastName.eq(name)).limit(1).load
-        } else {
-            panic!("No person with the given name found!");
-        }*/
     }
 }
 

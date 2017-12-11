@@ -22,7 +22,7 @@ impl Creator<SqliteConnection, String> for TestValueInserter {
         let connection_copy = connection.raw_connection();
         let connection_reference: &diesel::SqliteConnection = connection_copy.as_ref();
 
-        let to_insert: TestValue = (TestValue{TestId: 4, Value: to_insert});
+        let to_insert: TestValue = TestValue{TestId: 4, Value: to_insert};
 
         insert_into(TestTable::table)
             .values(&to_insert)

@@ -13,13 +13,12 @@ extern crate rocket;
 extern crate serde;
 extern crate dotenv;
 
-#[macro_use] extern crate rocket_contrib;
+extern crate rocket_contrib;
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate diesel;
 
 #[macro_use] extern crate diesel_infer_schema;
 
-use citadel::*;
 use citadel::creator::Creator;
 use citadel::system::DatabaseConnection;
 use citadel::reader::Reader;
@@ -30,12 +29,7 @@ use diesel::prelude::*;
 use dotenv::dotenv;
 use test_value_inserter::*;
 
-use emissary::*;
-
-use relationship::person::Person;
 use relationship::person_reader::{PersonReaderSearchCriteria, PersonReader};
-
-use rocket_contrib::{json, Json, Value};
 
 use std::env;
 use std::time::{SystemTime};
@@ -56,7 +50,6 @@ pub struct TestValueAndDate {
 
 #[get("/")]
 fn index() -> String {
-    use schema::*;
     use schema::TestTable::dsl::*;
     dotenv().ok();
     let database_url = env::var("DATABASE_URL").expect("The environment variable DATABASE_URL must be set!");
