@@ -70,7 +70,7 @@ fn index() -> String {
     let guy_named_john = (PersonReader {
         criteria: PersonReaderSearchCriteria::FirstName(String::from("John"))
     }).read(&connection);
-    println!("Johns email is {}", guy_named_john.email_address);
+    println!("Johns email is {}", guy_named_john.unwrap().email_address);
 
     let results = TestTable.limit(5)
         .load::<self::models::TestValue>(connection.raw_connection().as_ref())
