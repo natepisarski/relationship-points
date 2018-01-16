@@ -29,7 +29,8 @@ use diesel::prelude::*;
 use dotenv::dotenv;
 use test_value_inserter::*;
 
-use relationship::person_reader::{PersonReaderSearchCriteria, PersonReader};
+use relationship::person_search_criteria::PersonSearchCriteria;
+use relationship::person_reader::{PersonReader};
 
 use std::env;
 use std::time::{SystemTime};
@@ -61,7 +62,7 @@ fn index() -> String {
     inserter.insert(&connection, String::from("THIS IS A BRAND SPANKIN NEW TEST VALUE"));
 
     let guy_named_john = (PersonReader {
-        criteria: PersonReaderSearchCriteria::FirstName(String::from("John"))
+        criteria: PersonSearchCriteria::FirstName(String::from("John"))
     }).read(&connection);
     println!("Johns email is {}", guy_named_john.unwrap().email_address);
 

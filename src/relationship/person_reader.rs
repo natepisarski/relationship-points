@@ -5,14 +5,10 @@ use citadel::connections::sqlite_connection;
 use diesel::*;
 use relationship::person;
 
-pub enum PersonReaderSearchCriteria {
-    FirstName(String),
-    LastName(String),
-    EmailAddress(String)
-}
+use relationship::person_search_criteria::*;
 
 pub struct PersonReader {
-    pub criteria: PersonReaderSearchCriteria
+    pub criteria: PersonSearchCriteria
 }
 
 impl Reader<sqlite_connection::SqliteConnection, Option<person::PersonModel>> for PersonReader {
@@ -23,17 +19,17 @@ impl Reader<sqlite_connection::SqliteConnection, Option<person::PersonModel>> fo
         let usable_connection = connection.as_ref();
 
         match self.criteria {
-            PersonReaderSearchCriteria::FirstName(ref name) =>
+            PersonSearchCriteria::FirstName(ref name) =>
                 Some(Person
                 .filter(FirstName.eq(name))
                 .first(usable_connection)
                 .unwrap()),
-            PersonReaderSearchCriteria::LastName(ref name) =>
+            PersonSearchCriteria::LastName(ref name) =>
                 Some(Person
                     .filter(LastName.eq(name))
                     .first(usable_connection)
                     .unwrap()),
-            PersonReaderSearchCriteria::EmailAddress(ref email) =>
+            PersonSearchCriteria::EmailAddress(ref email) =>
                 Some(Person
                     .filter(EmailAddress.eq(email))
                     .first(usable_connection)

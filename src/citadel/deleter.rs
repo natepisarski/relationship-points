@@ -3,6 +3,6 @@
 
 use citadel::system::DatabaseConnection;
 
-pub trait Deleter<T: DatabaseConnection, W> {
-    fn delete(&self, connection: &T, deletion_argument: W) -> bool;
+pub trait Deleter<T: DatabaseConnection> {
+    fn delete(&self, connection: &T) -> bool;
 }
