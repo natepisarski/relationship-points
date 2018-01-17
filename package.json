@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "prettier": "^1.10.2",
+    "react-router-dom": "^4.2.2"
+  },
+  "name": "relationship-points",
+  "version": "1.0.0",
+  "description": "Testing ground for Norin code",
+  "main": "index.js",
+  "repository": "git@github.com:natepisarski/relationship-points.git",
+  "author": "Nathaniel Pisarski <nathanpisarski@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
