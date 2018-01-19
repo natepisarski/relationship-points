@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e198f5c2-45a3-440a-830c-9f4074fe6636" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/relationship-points-frontend/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/relationship-points-frontend/.idea/workspace.xml" afterPath="$PROJECT_DIR$/relationship-points-frontend/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/relationship-points-frontend/src/index.js" afterPath="$PROJECT_DIR$/relationship-points-frontend/src/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -196,7 +193,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
     <handled-path value="$PROJECT_DIR$/relationship-points-frontend/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
@@ -402,12 +398,12 @@
       <workItem from="1512331410268" duration="32819000" />
       <workItem from="1515641840903" duration="1889000" />
       <workItem from="1515814282467" duration="5732000" />
-      <workItem from="1515908417992" duration="8632000" />
+      <workItem from="1515908417992" duration="9231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79352000" />
+    <option name="totallyTimeSpent" value="79951000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

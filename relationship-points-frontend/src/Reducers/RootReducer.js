@@ -1,10 +1,25 @@
 import { combineReducers } from 'redux'
-export const InitialState = {
-    appName: 'Relationship Points'
+
+const InitialState = {
+    appName: "Relationship Points"
 }
 
-export default RootReducer = (state = InitialState, action) => combineReducers(
-    {
+export const ApplicationReducer = (state = InitialState, action) => {
+        return state
+}
 
+export const EmissaryReducer = (state = {}, action) => {
+    if(action.type === 'emissary') {
+        return Object.assign({}, state, {[action.key]: action.value})
+    }
+    return state
+}
+
+const RootReducer = combineReducers(
+    {
+        application: ApplicationReducer,
+        emissary: EmissaryReducer
     }
 )
+
+export default RootReducer

@@ -15,5 +15,5 @@ export const CallApi = (data: API_CALL_TYPE) => {
         data: data.payload
     }).then(response => {
 
-    }
+    })
 }
