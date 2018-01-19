@@ -4,7 +4,17 @@ const InitialState = {
     appName: "Relationship Points"
 }
 
-export const ApplicationReducer = (state = InitialState, action) => {
+export type stateType = {
+    application: {
+        appName: string
+    },
+    emissary: {
+
+    }
+}
+
+
+export const ApplicationReducer = (state: stateType = InitialState, action) => {
         return state
 }
 

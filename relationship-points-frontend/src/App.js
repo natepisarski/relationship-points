@@ -12,8 +12,7 @@ import RootReducer from "./Reducers/RootReducer"
 import './App.css';
 
 export type STORE_TYPE = {
-    applicationName: string,
-    userList: Array
+    application: Object
 }
 
 const store: STORE_TYPE = createStore(
@@ -27,7 +26,7 @@ const store: STORE_TYPE = createStore(
 // You need to (before you test lifecycle): Create a reducer / action creator tied to a HomeController button
 // You need to (before you test API calls): Create a reducer / action JUST for the easiest return type of data
 
-class App extends Component {
+class App extends Component<Object, Object> {
     render() {
         return (
             <Provider store={store}>
