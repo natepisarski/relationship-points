@@ -5,7 +5,6 @@
 pub mod schema;
 pub mod models;
 pub mod emissary;
-pub mod citadel;
 pub mod relationship;
 pub mod test_value_inserter;
 
@@ -14,15 +13,16 @@ extern crate serde;
 extern crate dotenv;
 
 extern crate rocket_contrib;
+extern crate citadel_crud;
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate diesel;
 
 #[macro_use] extern crate diesel_infer_schema;
 
-use citadel::creator::Creator;
-use citadel::system::DatabaseConnection;
-use citadel::reader::Reader;
-use citadel::connections::sqlite_connection;
+use citadel_crud::components::creator::Creator;
+use citadel_crud::system::DatabaseConnection;
+use citadel_crud::components::reader::Reader;
+use citadel_crud::connections::sqlite_connection;
 
 use diesel::prelude::*;
 

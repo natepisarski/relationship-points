@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e25950f-e214-45a1-93bd-32be96f886a7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/UsersContainer.js" afterPath="$PROJECT_DIR$/src/Containers/UsersContainer.js" />
-      <change beforePath="$PROJECT_DIR$/src/Middlewares/emissary.js" afterPath="$PROJECT_DIR$/src/Middlewares/emissary.js" />
-      <change beforePath="$PROJECT_DIR$/src/Reducers/RootReducer.js" afterPath="$PROJECT_DIR$/src/Reducers/RootReducer.js" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-    </list>
+    <list default="true" id="9e25950f-e214-45a1-93bd-32be96f886a7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -48,8 +41,8 @@
       <file leaf-file-name="RootReducer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Reducers/RootReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -260,12 +253,12 @@
       <updated>1514207479749</updated>
       <workItem from="1514207481751" duration="622000" />
       <workItem from="1515641869402" duration="85000" />
-      <workItem from="1516067115032" duration="8668000" />
+      <workItem from="1516067115032" duration="10299000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9375000" />
+    <option name="totallyTimeSpent" value="11006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="12" y="12" width="2536" height="1397" extended-state="0" />
@@ -453,8 +446,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Reducers/RootReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>

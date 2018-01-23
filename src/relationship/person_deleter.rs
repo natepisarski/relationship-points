@@ -1,7 +1,7 @@
-use citadel::system::DatabaseConnection;
-use citadel::*;
-use citadel::deleter::Deleter;
-use citadel::connections::sqlite_connection;
+use citadel_crud::system::DatabaseConnection;
+use citadel_crud::*;
+use citadel_crud::components::deleter::Deleter;
+use citadel_crud::connections::sqlite_connection;
 
 use diesel;
 use diesel::*;

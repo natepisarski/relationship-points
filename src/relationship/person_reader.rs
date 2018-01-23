@@ -1,6 +1,6 @@
-use citadel::system::DatabaseConnection;
-use citadel::reader::Reader;
-use citadel::connections::sqlite_connection;
+use citadel_crud::system::DatabaseConnection;
+use citadel_crud::components::reader::Reader;
+use citadel_crud::connections::sqlite_connection;
 
 use diesel::*;
 use relationship::person;

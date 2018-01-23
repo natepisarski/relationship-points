@@ -1,6 +1,6 @@
-use citadel::system::DatabaseConnection;
-use citadel::creator::Creator;
-use citadel::connections::sqlite_connection::SqliteConnection;
+use citadel_crud::system::DatabaseConnection;
+use citadel_crud::components::creator::Creator;
+use citadel_crud::connections::sqlite_connection::SqliteConnection;
 use diesel;
 
 use diesel::*;

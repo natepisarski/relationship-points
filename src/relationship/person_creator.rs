@@ -1,6 +1,7 @@
-use citadel::system::DatabaseConnection;
-use citadel::*;
-use citadel::connections::sqlite_connection;
+use citadel_crud::system::DatabaseConnection;
+use citadel_crud::*;
+use citadel_crud::connections::sqlite_connection::SqliteConnection;
+use citadel_crud::components::creator::Creator;
 
 use diesel::*;
 use relationship::person;
@@ -11,8 +12,8 @@ pub struct PersonCreator {
 
 }
 
-impl creator::Creator<sqlite_connection::SqliteConnection, person::PersonModel> for PersonCreator {
-    fn insert(&self, db_connection: &sqlite_connection::SqliteConnection, record: person::PersonModel) -> bool {
+impl Creator<SqliteConnection, person::PersonModel> for PersonCreator {
+    fn insert(&self, db_connection: &SqliteConnection, record: person::PersonModel) -> bool {
         let connection_copy = db_connection.raw_connection();
         let connection_reference = connection_copy.as_ref();
 
