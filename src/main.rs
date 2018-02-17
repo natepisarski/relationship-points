@@ -96,9 +96,10 @@ pub struct EndpointProperty {
 
 #[post("/endpoint", format = "application/json", data = "<endpoint_property>")]
 fn endpoint(endpoint_property: Json<EndpointProperty>) -> String {
-    return "TEST".to_string();
+    let property: EndpointProperty = endpoint_property.into_inner();
+    return format!("ID: {}, NAME: {}", property.id, property.name);
 }
 
 fn main() {
-    rocket::ignite().mount("/", routes![index]).launch();
+    rocket::ignite().mount("/", routes![index, endpoint]).launch();
 }
