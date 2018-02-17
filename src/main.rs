@@ -35,6 +35,9 @@ use relationship::person_reader::{PersonReader};
 use std::env;
 use std::time::{SystemTime};
 
+use rocket::request::FromRequest;
+use rocket_contrib::Json;
+
 pub fn establish_connection() -> diesel::SqliteConnection {
     dotenv().ok();
     let database_url = env::var("DATABASE_URL")
@@ -83,6 +86,17 @@ fn index() -> String {
         );
     }
     return final_result;
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct EndpointProperty {
+    id: u32,
+    name: String
+}
+
+#[post("/endpoint", format = "application/json", data = "<endpoint_property>")]
+fn endpoint(endpoint_property: Json<EndpointProperty>) -> String {
+    return "TEST".to_string();
 }
 
 fn main() {
