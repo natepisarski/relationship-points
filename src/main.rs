@@ -14,6 +14,9 @@ extern crate dotenv;
 
 extern crate rocket_contrib;
 extern crate citadel_crud;
+
+extern crate rocket_cors;
+
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate diesel;
 
@@ -41,32 +44,9 @@ use rocket_contrib::Json;
 use rocket::{Request, Response};
 use rocket::fairing::{Fairing, Info, Kind};
 use rocket::http::{Header, ContentType, Method};
+use rocket_cors::{AllowedOrigins, AllowedHeaders};
 use std::io::Cursor;
 
-pub struct CORS();
-
-impl Fairing for CORS {
-    fn info(&self) -> Info {
-        Info {
-            name: "Add CORS headers to requests",
-            kind: Kind::Response
-        }
-    }
-
-    fn on_response(&self, request: &Request, response: &mut Response) {
-        if request.method() == Method::Options || response.content_type() == Some(ContentType::JSON) {
-            response.set_header(Header::new("Access-Control-Allow-Origin", "*"));
-            response.set_header(Header::new("Access-Control-Allow-Methods", "POST, GET, OPTIONS"));
-            response.set_header(Header::new("Access-Control-Allow-Headers", "Content-Type"));
-            response.set_header(Header::new("Access-Control-Allow-Credentials", "true"));
-        }
-
-        if request.method() == Method::Options {
-            response.set_header(ContentType::Plain);
-            response.set_sized_body(Cursor::new(""));
-        }
-    }
-}
 
 pub fn establish_connection() -> diesel::SqliteConnection {
     dotenv().ok();
@@ -131,5 +111,16 @@ fn endpoint(endpoint_property: Json<EndpointProperty>) -> String {
 }
 
 fn main() {
-    rocket::ignite().mount("/", routes![index, endpoint]).attach(CORS()).launch();
+    let (allowed_origins, failed_origins) = AllowedOrigins::some(&["http://localhost:3000"]);
+    assert!(failed_origins.is_empty());
+
+    // You can also deserialize this
+    let options = rocket_cors::Cors {
+        allowed_origins,
+        allowed_methods: vec![Method::Get, Method::Post].into_iter().map(From::from).collect(),
+        allow_credentials: false,
+        ..Default::default()
+    };
+
+    rocket::ignite().mount("/", routes![index, endpoint]).attach(options).launch();
 }
