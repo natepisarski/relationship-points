@@ -1,7 +1,7 @@
 //@flow
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import {Provider} from 'react-redux'
 import { Switch, Route } from 'react-router-dom';
 
@@ -10,15 +10,16 @@ import {UsersContainer} from "./Containers/UsersContainer";
 import RootReducer from "./Reducers/RootReducer"
 
 import './App.css';
+import {ApiMiddleware} from "./Middlewares/api";
 
 export type STORE_TYPE = {
     application: Object
 }
 
-const store: STORE_TYPE = createStore(
+const store: STORE_TYPE = applyMiddleware(ApiMiddleware)(createStore)(
     RootReducer,
     {},
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 )
 
 // FOR TOMORROW: You have a root reducer, the store, and the beginning of an API working.

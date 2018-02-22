@@ -38,6 +38,36 @@ use std::time::{SystemTime};
 use rocket::request::FromRequest;
 use rocket_contrib::Json;
 
+use rocket::{Request, Response};
+use rocket::fairing::{Fairing, Info, Kind};
+use rocket::http::{Header, ContentType, Method};
+use std::io::Cursor;
+
+pub struct CORS();
+
+impl Fairing for CORS {
+    fn info(&self) -> Info {
+        Info {
+            name: "Add CORS headers to requests",
+            kind: Kind::Response
+        }
+    }
+
+    fn on_response(&self, request: &Request, response: &mut Response) {
+        if request.method() == Method::Options || response.content_type() == Some(ContentType::JSON) {
+            response.set_header(Header::new("Access-Control-Allow-Origin", "*"));
+            response.set_header(Header::new("Access-Control-Allow-Methods", "POST, GET, OPTIONS"));
+            response.set_header(Header::new("Access-Control-Allow-Headers", "Content-Type"));
+            response.set_header(Header::new("Access-Control-Allow-Credentials", "true"));
+        }
+
+        if request.method() == Method::Options {
+            response.set_header(ContentType::Plain);
+            response.set_sized_body(Cursor::new(""));
+        }
+    }
+}
+
 pub fn establish_connection() -> diesel::SqliteConnection {
     dotenv().ok();
     let database_url = env::var("DATABASE_URL")
@@ -101,5 +131,5 @@ fn endpoint(endpoint_property: Json<EndpointProperty>) -> String {
 }
 
 fn main() {
-    rocket::ignite().mount("/", routes![index, endpoint]).launch();
+    rocket::ignite().mount("/", routes![index, endpoint]).attach(CORS()).launch();
 }
